@@ -5,6 +5,9 @@ metadata:
   namespace: demo
   labels:
     app: kafka-app
+  annotations:
+    "prometheus.io/scrape": "true"
+    "prometheus.io/port": "9000"
 spec:
   type: ClusterIP
   ports:
@@ -12,6 +15,10 @@ spec:
       port: 9092
       protocol: TCP
       targetPort: 9092
+    - name: '9000'
+      port: 9000
+      protocol: TCP
+      targetPort: 9000
   selector:
     app: kafka-app
 ---

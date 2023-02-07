@@ -1,4 +1,5 @@
 #!/bin/bash
+ls /opt/jmx_exporter
 NODE_ID=${HOSTNAME:6}
 LISTENERS="PLAINTEXT://:9092,CONTROLLER://:9093"
 ADVERTISED_LISTENERS="PLAINTEXT://kafka-$NODE_ID.$SERVICE.$NAMESPACE.svc.cluster.local:9092"
